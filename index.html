@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Still Mind - 30-Day Journal for Mental Clarity</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #F4F0E8;
+            color: #1C1C2E;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            text-align: center;
+            padding: 80px 0 100px;
+        }
+
+        .hero-eyebrow {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #2A52BE;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            color: #1C1C2E;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 40px;
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .credentials-box {
+            background: white;
+            border: 2px solid #2A52BE;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin: 0 auto 40px;
+            max-width: 640px;
+            text-align: left;
+        }
+
+        .credentials-box strong {
+            display: block;
+            color: #2A52BE;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .credentials-box p {
+            font-size: 15px;
+            color: #1C1C2E;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 48px;
+            background: #2A52BE;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .btn:hover {
+            background: #1a3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(42, 82, 190, 0.3);
+        }
+
+        .hero-guarantee {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* ── SECTIONS ── */
+        .section { margin-bottom: 120px; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ── 2x2 PROBLEM CARDS ── */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        @media (max-width: 640px) { .cards-grid { grid-template-columns: 1fr; } }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 36px;
+            border: 1px solid #e5e1d9;
+            transition: all 0.25s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            border-color: #2A52BE;
+            transform: translateY(-3px);
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: #f0f3ff;
+            color: #2A52BE;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1C1C2E;
+            line-height: 1.3;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ── MECHANISM ── */
+        .mechanism-box {
+            background: white;
+            border-radius: 12px;
+            padding: 56px 48px;
+            border: 1px solid #e5e1d9;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 640px) { .steps-grid { grid-template-columns: 1fr 1fr; gap: 24px; } }
+
+        .step-box { text-align: center; }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2A52BE, #1a3a8a);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 22px;
+            margin: 0 auto 16px;
+        }
+
+        .step-box h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1C1C2E;
+        }
+
+        .step-phase {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #2A52BE;
+            margin-bottom: 6px;
+        }
+
+        .step-box p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ── TESTIMONIALS ── */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid #e5e1d9;
+        }
+
+        .testimonial-quote {
+            font-size: 15px;
+            color: #1C1C2E;
+            line-height: 1.65;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2A52BE;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: #999;
+            margin-top: 2px;
+        }
+
+        /* ── SAMPLE ── */
+        .sample-section {
+            background: #fafaf8;
+            border-radius: 12px;
+            padding: 56px 48px;
+            text-align: center;
+            border: 1px solid #e5e1d9;
+        }
+
+        .sample-image {
+            width: 100%;
+            max-width: 580px;
+            border-radius: 8px;
+            margin-bottom: 28px;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+        }
+
+        .sample-caption {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ── FEATURES ── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        @media (max-width: 640px) { .features-grid { grid-template-columns: 1fr; } }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid #e5e1d9;
+        }
+
+        .feature-card h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1C1C2E;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ── VALUE STATS ── */
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 56px;
+        }
+
+        @media (max-width: 640px) { .value-grid { grid-template-columns: 1fr; } }
+
+        .value-item {
+            background: white;
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            border: 1px solid #e5e1d9;
+        }
+
+        .value-number {
+            font-size: 40px;
+            font-weight: 700;
+            color: #2A52BE;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .value-label {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* ── FAQ ── */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 640px) { .faq-grid { grid-template-columns: 1fr; } }
+
+        .faq-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            border: 1px solid #e5e1d9;
+        }
+
+        .faq-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1C1C2E;
+        }
+
+        .faq-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ── PRICING ── */
+        .pricing-outer {
+            text-align: center;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 3px solid #2A52BE;
+            border-radius: 16px;
+            padding: 60px 56px;
+            display: inline-block;
+            min-width: 360px;
+        }
+
+        @media (max-width: 480px) { .pricing-card { min-width: unset; padding: 40px 28px; } }
+
+        .price-amount {
+            font-size: 72px;
+            font-weight: 700;
+            color: #2A52BE;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .price-desc {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 36px;
+        }
+
+        .guarantee-text {
+            font-size: 14px;
+            color: #888;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid #e5e1d9;
+        }
+
+        /* ── POST-PURCHASE ── */
+        .post-purchase {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 48px;
+            border: 1px solid #e5e1d9;
+            margin-top: 48px;
+        }
+
+        .post-purchase h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            text-align: center;
+            color: #1C1C2E;
+        }
+
+        .post-steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            text-align: center;
+        }
+
+        @media (max-width: 640px) { .post-steps { grid-template-columns: 1fr; } }
+
+        .post-step-num {
+            width: 36px;
+            height: 36px;
+            background: #f0f3ff;
+            color: #2A52BE;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 15px;
+            margin: 0 auto 12px;
+        }
+
+        .post-step h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1C1C2E;
+            margin-bottom: 6px;
+        }
+
+        .post-step p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* ── FINAL CTA ── */
+        .final-cta {
+            text-align: center;
+            padding: 80px 0;
+            border-top: 1px solid #e5e1d9;
+        }
+
+        .final-cta h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 36px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── NOT FOR EVERYONE ── */
+        .not-for-you {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 48px;
+            border: 1px solid #e5e1d9;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        @media (max-width: 640px) { .not-for-you { grid-template-columns: 1fr; gap: 32px; } }
+
+        .not-for-you h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1C1C2E;
+        }
+
+        .not-for-you ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .not-for-you ul li {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.65;
+            padding: 6px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .not-for-you ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+
+        .not-for-you ul.yes li::before { background: #2A52BE; }
+
+        /* ── STICKY CTA BAR (mobile) ── */
+        .sticky-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e5e1d9;
+            padding: 16px 24px;
+            z-index: 100;
+            text-align: center;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+        }
+
+        .sticky-bar .btn {
+            width: 100%;
+            max-width: 400px;
+            padding: 14px 24px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) { .sticky-bar { display: block; } }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 36px; }
+            .hero-subtitle { font-size: 17px; }
+            .section-header h2 { font-size: 28px; }
+            .mechanism-box, .sample-section { padding: 36px 20px; }
+            .final-cta h2 { font-size: 28px; }
+            .not-for-you { padding: 28px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- META PIXEL CODE -->
+    <script>
+        var pixelId = 'YOUR_PIXEL_ID';
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', pixelId);
+        fbq('track', 'PageView');
+    </script>
+
+    <div class="container">
+
+        <!-- ── HERO ── -->
+        <div class="hero">
+            <div class="hero-eyebrow">30-Day Mental Clarity Journal</div>
+            <h1>Stop the overthinking loop.</h1>
+            <p class="hero-subtitle">A structured daily practice grounded in Neuroscience. Built specifically for minds that never stop.</p>
+
+            <div class="credentials-box">
+                <strong>Created by a Neuroscience researcher</strong>
+                <p>King's College London. Expertise in attention, metacognition, and cognitive load. 7+ years of personal journaling practice. This is not a self-help product. It is a structured tool built on evidence of how the mind actually works.</p>
+            </div>
+
+            <button class="btn" onclick="document.querySelector('#pricing').scrollIntoView({behavior:'smooth'})">Download PDF Now &mdash; $9.99</button>
+            <div class="hero-guarantee">One-time purchase. Instant PDF download. 30-day money-back guarantee.</div>
+        </div>
+
+        <!-- ── PROBLEM: 2x2 ── -->
+        <div class="section">
+            <div class="section-header">
+                <h2>The overthinker's dilemma.</h2>
+                <p>These are the cognitive patterns keeping smart minds stuck.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-tag">Working Memory</div>
+                    <h3>"My brain has 37 tabs open and I can't find the one playing music."</h3>
+                    <p>Your brain can hold 3-4 ideas at once. When you carry 20 competing thoughts, none get prioritized. Everything feels equally urgent because, to your working memory, it is.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-tag">Rumination</div>
+                    <h3>"I analyze every angle and still don't know where to start."</h3>
+                    <p>High-capacity minds excel at analysis. But analysis without structure creates loops, not clarity. You cycle through the same worry from different angles and end up exactly where you started.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-tag">Metacognition</div>
+                    <h3>"I know I'm overthinking. I just can't make myself stop."</h3>
+                    <p>Awareness alone does not interrupt the pattern. You need a system to externalize what is circling. Knowing you are in a loop is not the same as having a way out of it.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-tag">Decision Fatigue</div>
+                    <h3>"Everything feels urgent because nothing feels manageable."</h3>
+                    <p>A full mind cannot make clear decisions. Anxiety builds. Anxiety triggers more thinking. More thinking creates more anxiety. The cycle does not break on its own.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── MECHANISM ── -->
+        <div class="section">
+            <div class="section-header">
+                <h2>How Still Mind works.</h2>
+                <p>A 4-step daily structure designed to offload cognitive load and build clarity. Takes 5-10 minutes.</p>
+            </div>
+
+            <div class="mechanism-box">
+                <div class="steps-grid">
+                    <div class="step-box">
+                        <div class="step-number">1</div>
+                        <div class="step-phase">Week 1-2: Awareness</div>
+                        <h4>Externalize</h4>
+                        <p>Write every circling thought without filtering. Offload your working memory so your brain can see what it is holding.</p>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-number">2</div>
+                        <div class="step-phase">Week 2-3: Release</div>
+                        <h4>Identify</h4>
+                        <p>Answer a structured prompt that surfaces what you are actually avoiding. Create distance between you and the thought.</p>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-number">3</div>
+                        <div class="step-phase">Week 3-4: Focus</div>
+                        <h4>Prioritize</h4>
+                        <p>Name the one thing that matters today. Turn noise into signal. Free up mental resources for decision-making.</p>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-number">4</div>
+                        <div class="step-phase">Week 4: Integration</div>
+                        <h4>Track</h4>
+                        <p>Check mood and energy before and after. Build data on what actually works for your nervous system, not what theory suggests.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── SAMPLE PAGE ── -->
+        <div class="section">
+            <div class="section-header">
+                <h2>See what a practice day looks like.</h2>
+            </div>
+            <div class="sample-section">
+                <img src="images/sample-page.jpg" alt="Sample Still Mind journal page" class="sample-image">
+                <p class="sample-caption">Each page follows the same 4-step structure. Daily prompts change week by week, progressing from awareness to integration. The sequence is grounded in Neuroscience research on how insight and habit actually develop over time.</p>
+            </div>
+        </div>
+
+        <!-- ── TESTIMONIALS ── -->
+        <div class="section">
+            <div class="section-header">
+                <h2>What people say.</h2>
+                <p>From people who think the way you do.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"I didn't need another planner. I needed a way to empty my head. This is the only journal that actually does that."</div>
+                    <div class="testimonial-author">Sarah M.</div>
+                    <div class="testimonial-role">Product Manager</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"I used to think I was lazy. Turns out I was just overloaded. The framework helped me see the difference."</div>
+                    <div class="testimonial-author">James K.</div>
+                    <div class="testimonial-role">Executive Coach</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"5 minutes is actually doable. I stuck with it for the full 30 days, which has never happened with any journal before."</div>
+                    <div class="testimonial-author">Maya S.</div>
+                    <div class="testimonial-role">Startup Founder</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── WHAT YOU GET ── -->
+        <div class="section">
+            <div class="section-header">
+                <h2>What is included.</h2>
+                <p>Everything built into one 30-day system.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>30 complete journal pages</h4>
+                    <p>A full 30-day sequence. Each day builds on the last, following the Awareness, Release, Focus, and Integration progression.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Research-backed daily prompts</h4>
+                    <p>Questions designed to interrupt rumination and surface what you are unconsciously avoiding. Each prompt serves a specific cognitive function, not just a journaling exercise.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Implementation guide</h4>
+                    <p>Explanation of why each prompt matters. Background on the cognitive mechanisms at work. How to adapt the system to your thinking style.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Digital or printable</h4>
+                    <p>Works on tablets (iPad and Apple Pencil ideal) or print it. One-time purchase. Lifetime access. Use it as many times as you need.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Repeatable system</h4>
+                    <p>Use as a one-time intensive or return to it whenever your thinking becomes scattered. Most people benefit from 2-3 cycles per year.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>100% private</h4>
+                    <p>Downloadable PDF. Nothing uploaded, no account required. Your journal stays on your device. Complete privacy and ownership.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── THE COST OF NOT ACTING ── -->
+        <div class="section">
+            <div class="section-header">
+                <h2>What overthinking actually costs you.</h2>
+                <p>The case for addressing this now.</p>
+            </div>
+
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-number">47%</div>
+                    <div class="value-label">of waking hours spent mind-wandering, not present or productive</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-number">2.1hrs</div>
+                    <div class="value-label">lost daily to task-switching and unresolved mental loops</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-number">$9.99</div>
+                    <div class="value-label">one-time investment in a system that changes how you think</div>
+                </div>
+            </div>
+
+            <div style="text-align:center; max-width:680px; margin: 0 auto;">
+                <p style="font-size:17px; color:#666; line-height:1.75;">Mental clarity compounds. Clearer thinking leads to better decisions. Better decisions compound across months and years. The cost of not addressing this is not staying the same. It is falling further behind yourself.</p>
+            </div>
+        </div>
+
+        <!-- ── NOT FOR EVERYONE ── -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Who this is for. Who it is not.</h2>
+                <p>Still Mind is not for everyone. Here is how to know if it is right for you.</p>
+            </div>
+            <div class="not-for-you">
+                <div>
+                    <h3>This is for you if:</h3>
+                    <ul class="yes">
+                        <li>Your mind feels full even when nothing is "wrong"</li>
+                        <li>You overthink decisions to the point of paralysis</li>
+                        <li>You have tried meditation apps and found them too passive</li>
+                        <li>You want structure, not a blank page</li>
+                        <li>You think analytically and want a tool built for that</li>
+                        <li>You are willing to spend 5 minutes a day on this</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>This is not for you if:</h3>
+                    <ul>
+                        <li>You are looking for a quick fix that requires no practice</li>
+                        <li>You already have a journaling routine that works</li>
+                        <li>You need clinical mental health treatment</li>
+                        <li>You prefer app-based tracking with notifications</li>
+                        <li>You are skeptical of Neuroscience-backed frameworks</li>
+                        <li>You will not commit to 5 minutes daily</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── FAQ ── -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Common questions.</h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h4>Is this legitimate?</h4>
+                    <p>Yes. Created by a Neuroscience researcher (King's College London) with 7+ years of personal practice. The prompts are grounded in peer-reviewed research on metacognition, working memory, and habit formation. No wellness fluff.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Is this a substitute for therapy?</h4>
+                    <p>No. If you need professional mental health support, get it. This works alongside therapy, not instead of it. It will not diagnose or treat clinical conditions.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>I have tried journaling before and it did not work.</h4>
+                    <p>Most journaling fails because it is open-ended. A blank page gives overthinkers more space to spiral. Still Mind uses a fixed daily structure that prevents that. It is a clearing system, not a diary.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Who is this actually for?</h4>
+                    <p>People who think deeply, get stuck in analysis loops, and have trouble quieting their minds. Specifically built for high-capacity, analytical thinkers. If that is not you, this is probably not for you.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>How much time does it take?</h4>
+                    <p>5-10 minutes per day. The structure does the heavy lifting. You show up, follow the prompts, and close the page. That is it.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Is my journal private?</h4>
+                    <p>Completely. It is a downloadable PDF. Nothing is uploaded anywhere. No login, no tracking, no data collection. Your thoughts stay yours.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── PRICING ── -->
+        <div class="section" id="pricing">
+            <div class="pricing-outer">
+                <div class="pricing-card">
+                    <div class="price-amount">$9.99</div>
+                    <div class="price-desc">One-time purchase. Instant PDF download. Lifetime access.</div>
+                    <button class="btn" onclick="redirectToStripe()">Download PDF Now</button>
+                    <div class="guarantee-text">30-day money-back guarantee. If it does not work for you, full refund. No questions asked.</div>
+                </div>
+
+                <div class="post-purchase">
+                    <h3>What happens after you buy</h3>
+                    <div class="post-steps">
+                        <div class="post-step">
+                            <div class="post-step-num">1</div>
+                            <h4>Purchase</h4>
+                            <p>Instant download link sent to your email. No account needed.</p>
+                        </div>
+                        <div class="post-step">
+                            <div class="post-step-num">2</div>
+                            <h4>Download</h4>
+                            <p>PDF opens on any device. Print it or use it digitally. No app, no login.</p>
+                        </div>
+                        <div class="post-step">
+                            <div class="post-step-num">3</div>
+                            <h4>Start Day 1</h4>
+                            <p>5 minutes. Follow the prompts. Done. Your mind will feel the difference.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── FINAL CTA ── -->
+        <div class="final-cta">
+            <h2>You already know the cost of not addressing this.</h2>
+            <p>Lost productivity. Strained relationships. Decisions made from a scattered mind. Still Mind gives you a way out of the loop.</p>
+            <button class="btn" onclick="redirectToStripe()">Download PDF Now</button>
+            <p style="font-size:14px; color:#999; margin-top:20px; margin-bottom:0;">$9.99 one-time. 30-day refund if it does not work.</p>
+        </div>
+
+    </div>
+
+    <!-- ── STICKY MOBILE CTA BAR ── -->
+    <div class="sticky-bar" id="stickyBar" style="display:none;">
+        <button class="btn" onclick="redirectToStripe()">Download PDF Now &mdash; $9.99</button>
+    </div>
+
+    <script>
+        function redirectToStripe() {
+            fbq('track', 'InitiateCheckout');
+            window.location.href = 'YOUR_STRIPE_CHECKOUT_LINK';
+        }
+
+        // Show sticky bar after scrolling past hero on mobile
+        var hero = document.querySelector('.hero');
+        var stickyBar = document.getElementById('stickyBar');
+
+        window.addEventListener('scroll', function() {
+            if (window.innerWidth <= 768) {
+                var heroBottom = hero.getBoundingClientRect().bottom;
+                stickyBar.style.display = heroBottom < 0 ? 'block' : 'none';
+            }
+        });
+    </script>
+</body>
+</html>
